@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="brand">
+      <div class="brand-top">
+        <span class="logo-mark">"</span>
+        <span class="brand-label">WORDS THAT MOVE YOU</span>
+      </div>
+
+      <div class="brand-main">
+        <h1>Quote<br />Generator</h1>
+        <p>A fresh thought for every click. Find the words you need, right when you need them.</p>
+      </div>
+
+      <div class="brand-bottom">
+        <span>DAILY INSPIRATION</span>
+        <span class="dot"></span>
+        <span>12 CURATED QUOTES</span>
+      </div>
+    </aside>
+
+    <section class="stage">
+      <div class="quote-card">
+        <span class="quote-icon" aria-hidden="true">"</span>
+        <p class="quote-text" id="quote">“The only way to do great work is to love what you do.”</p>
+        <p class="quote-author" id="author">— Steve Jobs</p>
+
+        <div class="divider"></div>
+
+        <div class="buttons">
+          <button id="new-quote" type="button">New Quote</button>
+          <button id="share-quote" type="button" class="secondary">Share Quote</button>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

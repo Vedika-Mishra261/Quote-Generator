@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+}
+
+.brand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: clamp(28px, 5vw, 64px);
+  background: linear-gradient(160deg, #171238 0%, #2b1c5e 55%, #4a2a7a 100%);
+}
+
+.brand::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  right: -180px;
+  top: 18%;
+  box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.025), 0 0 0 120px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+.brand-top,
+.brand-main,
+.brand-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #ffd48a;
+}
+
+.brand-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  color: #c9bdf0;
+}
+
+.brand-main h1 {
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.brand-main p {
+  max-width: 340px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #c7bede;
+}
+
+.brand-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: #9f95c4;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffd48a;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 6vw, 80px);
+  background: #241a4d url("background.svg") center / cover no-repeat;
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(20, 12, 50, 0.45), rgba(20, 12, 50, 0.1));
+}
+
+.quote-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #241c3d;
+  box-shadow: 0 24px 60px rgba(10, 6, 30, 0.35);
+}
+
+.quote-icon {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5rem;
+  line-height: 0.6;
+  color: #efc46b;
+  margin-bottom: 18px;
+}
+
+.quote-text {
+  min-height: 3em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.quote-author {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b5f8a;
+}
+
+.divider {
+  height: 1px;
+  margin: 32px 0 26px;
+  background: linear-gradient(to right, #e5def5, transparent);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+button {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6d4bd8, #4b2fa8);
+  box-shadow: 0 8px 18px rgba(75, 47, 168, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(75, 47, 168, 0.32);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.secondary {
+  border: 1px solid #ded5f0;
+  background: #f1ecfa;
+  color: #4b3a75;
+  box-shadow: none;
+}
+
+button.secondary:hover {
+  background: #e8e0f7;
+  box-shadow: none;
+}
+
+button:focus-visible {
+  outline: 3px solid #a78bfa;
+  outline-offset: 3px;
+}
+
+.status {
+  min-height: 1.2em;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2f855a;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    gap: 24px;
+    padding: 32px 24px 28px;
+  }
+
+  .brand::after {
+    width: 260px;
+    height: 260px;
+    right: -120px;
+    top: 0;
+  }
+
+  .brand-main h1 {
+    font-size: clamp(2.4rem, 9vw, 3.6rem);
+    margin-bottom: 10px;
+  }
+
+  .brand-main p {
+    max-width: 520px;
+    font-size: 0.95rem;
+  }
+
+  .stage {
+    min-height: 60vh;
+    padding: 36px 20px 48px;
+  }
+
+  .quote-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-top {
+    gap: 8px;
+  }
+
+  .logo-mark {
+    font-size: 2rem;
+  }
+
+  .brand-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brand-bottom {
+    font-size: 0.6rem;
+  }
+
+  .quote-icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+
+  .quote-text {
+    font-size: 1.3rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
